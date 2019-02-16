@@ -203,7 +203,7 @@ def normalize_signal(signal):
   """
   Normalize float32 signal to [-1, 1] range
   """
-  return signal / np.max(np.abs(signal))
+  return signal / (np.max(np.abs(signal)) + 0.000001)
 
 
 def augment_audio_signal(signal, sample_freq, augmentation):
